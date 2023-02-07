@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La recette Carbonara</title>
+</head>
+
+<body>
+    <h2>La recette Carbonara</h2>
+
+
+    <p>
+    <ol>
+        <!-- <li>Pâtes</li>
+        <li>Oeuf</li>
+        <li>Sel</li>
+        <li>Poivre</li>
+        <li>Lardon</li>
+        <li>Oignon</li>
+        <li>Parmesan</li> -->
+    </ol>
+    </p>
+    <p>Première étape</p>
+    <p id="Première étape"></p>
+    <script>
+        var ingredients = ["Pâtes", "Oeuf", "Sel", "Poivre", "Lardon", "Oignon", "Parmesan"];
+        var index = [1, 2, 3, 4, 5, 6, 7];
+        console.log(ingredients)
+
+        document.getElementById("Première étape").innerText = " Pour la rectte de la carbonara, vous aurez besoin de :" + ingredients + " " + ingredients.length
+    </script>
+    <p>Deuxième étape</p>
+    <p id="Deuxième étape"></p>
+    <script>
+        function showArray(ingredients) {
+            for (var i = 0; i < ingredients.length; i++) {
+                console.log(ingredients[i]);
+
+                document.getElementById("Deuxième étape").innerText += ingredients[i]
+                document.getElementById("Deuxième étape").innerText += "\n"
+            }
+        }
+        showArray(ingredients);
+    </script>
+    <p>Troisème étape</p>
+    <p id="Troisème étape"></p>
+    <script>
+        function showArray(ingredients) {
+            for (var i = 0; i < ingredients.length; i++) {
+                console.log(ingredients[i]);
+
+                document.getElementById("Troisème étape").innerText += ingredients[i]
+                //document.getElementById("Troisème étape").innerText += "\n"
+            }
+        }
+        function showArray(index) {
+            for (var i = 0; i < index.length; i++) {
+                console.log(index[i]);
+
+                document.getElementById("Troisème étape").innerText += index[i]
+                //document.getElementById("Troisème étape").innerText += "\n"
+            }
+        }
+        //showArray(ingredients);
+        //showArray(index);
+        showArray([(index[0])] + [(ingredients[0])] + "\n");
+        showArray([(index[1])] + [(ingredients[1])] + "\n");
+        showArray([(index[2])] + [(ingredients[2])] + "\n");
+        showArray([(index[3])] + [(ingredients[3])] + "\n");
+        showArray([(index[4])] + [(ingredients[4])] + "\n");
+        showArray([(index[5])] + [(ingredients[5])] + "\n");
+        showArray([(index[6])] + [(ingredients[6])] + "\n");
+    </script>
+
+    <p>Quatrième étape</p>
+    <p id="Quatrième étape"></p>
+    <script>
+        ingredients.sort();
+        console.log(ingredients);
+
+        document.getElementById("Quatrième étape").innerText = "Voici la liste des ingrédients par ordre alphabétique: " + ingredients 
+    </script>
+</body>
+
+</html>
