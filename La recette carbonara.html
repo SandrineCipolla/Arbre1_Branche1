@@ -30,49 +30,75 @@
         var index = [1, 2, 3, 4, 5, 6, 7];
         console.log(ingredients)
 
-        document.getElementById("Première étape").innerText = " Pour la rectte de la carbonara, vous aurez besoin de :" + ingredients + " " + ingredients.length
+        document.getElementById("Première étape").innerText = " Pour la rectte de la carbonara, vous aurez besoin de :" + ingredients + "\n" + ingredients.length
     </script>
     <p>Deuxième étape</p>
     <p id="Deuxième étape"></p>
     <script>
-        function showArray(ingredients) {
+
+        function appendToElementId(elementId, content) {
+            document.getElementById(elementId).innerText += content
+        }
+
+        function appendToInnerHtmlElementId(elementId, content) {
+            document.getElementById(elementId).innerHTML += content
+        }
+
+        function showArray2(ingredients) {
+
+            const elementIdDeuxiemeEtape = "Deuxième étape"
             for (var i = 0; i < ingredients.length; i++) {
                 console.log(ingredients[i]);
 
-                document.getElementById("Deuxième étape").innerText += ingredients[i]
-                document.getElementById("Deuxième étape").innerText += "\n"
+                appendToElementId(elementIdDeuxiemeEtape, ingredients[i])
+                // document.getElementById(elementIdDeuxiemeEtape).innerText += ingredients[i]
+
+                appendToElementId(elementIdDeuxiemeEtape, "\n")
+                // document.getElementById(elementIdDeuxiemeEtape).innerText += "\n"
+
             }
         }
-        showArray(ingredients);
+        showArray2(ingredients);
     </script>
     <p>Troisème étape</p>
     <p id="Troisème étape"></p>
+
+    <ol id="ThirdStepList"></ol>
     <script>
-        function showArray(ingredients) {
-            for (var i = 0; i < ingredients.length; i++) {
-                console.log(ingredients[i]);
+        // function showArray(ingredients) {
+        //     for (var i = 0; i < ingredients.length; i++) {
+        //         console.log(ingredients[i]);
 
-                document.getElementById("Troisème étape").innerText += ingredients[i]
-                //document.getElementById("Troisème étape").innerText += "\n"
-            }
-        }
-        function showArray(index) {
-            for (var i = 0; i < index.length; i++) {
-                console.log(index[i]);
+        //         document.getElementById("Troisème étape").innerText += ingredients[i]
+        //         //document.getElementById("Troisème étape").innerText += "\n"
+        //     }
+        // }
+        // function showArray(index) {
+        //     for (var i = 0; i < index.length; i++) {
+        //         console.log(index[i]);
 
-                document.getElementById("Troisème étape").innerText += index[i]
-                //document.getElementById("Troisème étape").innerText += "\n"
-            }
-        }
+        //         document.getElementById("Troisème étape").innerText += index[i]
+        //         //document.getElementById("Troisème étape").innerText += "\n"
+        //     }
+        // }
         //showArray(ingredients);
         //showArray(index);
-        showArray([(index[0])] + [(ingredients[0])] + "\n");
-        showArray([(index[1])] + [(ingredients[1])] + "\n");
-        showArray([(index[2])] + [(ingredients[2])] + "\n");
-        showArray([(index[3])] + [(ingredients[3])] + "\n");
-        showArray([(index[4])] + [(ingredients[4])] + "\n");
-        showArray([(index[5])] + [(ingredients[5])] + "\n");
-        showArray([(index[6])] + [(ingredients[6])] + "\n");
+        // showArray([(index[0])] + [(ingredients[0])] + "\n");
+        // showArray([(index[1])] + [(ingredients[1])] + "\n");
+        // showArray([(index[2])] + [(ingredients[2])] + "\n");
+        // showArray([(index[3])] + [(ingredients[3])] + "\n");
+        // showArray([(index[4])] + [(ingredients[4])] + "\n");
+        // showArray([(index[5])] + [(ingredients[5])] + "\n");
+        // showArray([(index[6])] + [(ingredients[6])] + "\n");
+
+        for (let i = 0; i < ingredients.length; i++) {
+            let currentIndexRecette = i + 1;
+            let currentIngredient = ingredients[i]
+            appendToElementId("Troisème étape", currentIndexRecette + currentIngredient + "\n")
+
+            appendToInnerHtmlElementId("ThirdStepList", "<li>" + currentIngredient + "</li>")
+        }
+
     </script>
 
     <p>Quatrième étape</p>
@@ -80,8 +106,8 @@
     <script>
         ingredients.sort();
         console.log(ingredients);
-
-        document.getElementById("Quatrième étape").innerText = "Voici la liste des ingrédients par ordre alphabétique: " + ingredients 
+        appendToElementId("Quatrième étape", "Voici la liste des ingrédients par ordre alphabétique: " + ingredients)
+        // document.getElementById("Quatrième étape").innerText = "Voici la liste des ingrédients par ordre alphabétique: " + ingredients
     </script>
 </body>
 
